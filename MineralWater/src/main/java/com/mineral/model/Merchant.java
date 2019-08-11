@@ -8,24 +8,23 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="user")
-public class User {
-	
+@Table(name="merchant")
+public class Merchant {
 	@Id
 	@Column(name="Id")
 	private int id;
 	
-	@Column(name="FirstName")
-	private String firstName;
+	@Column(name="ShopId")
+	private String shopId;
 	
-	@Column(name="LastName")
-	private String lastName;
+	@Column(name="ShopName")
+	private String shopName;
+	
+	@Column(name="Address")
+	private String address;
 	
 	@Column(name="EmailId")
 	private String emailId;
-
-	@Column(name="Address")
-	private String address;
 	
 	@Column(name="ActiveStatus")
 	private char activeStatus;
@@ -36,36 +35,28 @@ public class User {
 	@Column(name="CreatedOn")
 	private Date createdOn;
 
-	public int getId() {
+	public int getBrandId() {
 		return id;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setBrandId(int brandId) {
+		this.id = brandId;
 	}
 
-	public String getFirstName() {
-		return firstName;
+	public String getShopId() {
+		return shopId;
 	}
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	public void setShopId(String shopId) {
+		this.shopId = shopId;
 	}
 
-	public String getLastName() {
-		return lastName;
+	public String getShopName() {
+		return shopName;
 	}
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-
-	public String getEmailId() {
-		return emailId;
-	}
-
-	public void setEmailId(String emailId) {
-		this.emailId = emailId;
+	public void setShopName(String shopName) {
+		this.shopName = shopName;
 	}
 
 	public String getAddress() {
@@ -74,6 +65,14 @@ public class User {
 
 	public void setAddress(String address) {
 		this.address = address;
+	}
+
+	public String getEmailId() {
+		return emailId;
+	}
+
+	public void setEmailId(String emailId) {
+		this.emailId = emailId;
 	}
 
 	public char getActiveStatus() {
@@ -102,9 +101,9 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", firstName=" + firstName + ", lastName="
-				+ lastName + ", emailId=" + emailId + ", address=" + address
-				+ ", activeStatus=" + activeStatus + ", createdBy=" + createdBy
-				+ ", createdOn=" + createdOn + "]";
+		return "BrandDetails [brandId=" + id + ", shopId=" + shopId
+				+ ", shopName=" + shopName + ", address=" + address
+				+ ", emailId=" + emailId + ", activeStatus=" + activeStatus
+				+ ", createdBy=" + createdBy + ", createdOn=" + createdOn + "]";
 	}
 }
